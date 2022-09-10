@@ -1,13 +1,13 @@
-package nitw.election.portal.application;
+package nitw.election.portal;
 
 //importing spring framework
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-//for allowing CORS
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
 
 import java.util.Collections;
 
@@ -20,14 +20,14 @@ import java.util.Collections;
  *   The WebMvcConfigurer with bean annotation runs before the main method
  *   this method allows the CORS for the rest end points created
  */
-@SpringBootApplication // Spring boot annotation
+@SpringBootApplication (scanBasePackages = { "nitw"}) // Spring boot annotation
 public class NITWElectionPortalApplication {
     public static void main(String... args) {
 //        SpringApplication.run(testAppl.class, args);
         // CREATING A SPRING BOOT APPLICATION
         SpringApplication app = new SpringApplication(NITWElectionPortalApplication.class);
         app.setDefaultProperties(Collections
-                .singletonMap("server.port", "8083"));
+                .singletonMap("server.port", "8088"));
         app.run(args);
     }
     // @bean annotation is executed before the start of the program

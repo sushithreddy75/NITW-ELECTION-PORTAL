@@ -1,0 +1,45 @@
+package nitw.election.portal.Entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+/*
+ * author @sushithreddy75
+ *
+ * This class is the template of table Faculty in the database
+ * The class variable stores the Faculty details
+ * Inside the database significance of the class is the Faculty
+ * for which elections are conducted in the portal
+ */
+@Entity
+public class Faculty {
+    @Id
+    public String facultyId;
+    public String password;
+    public String facultyName;
+
+    public String getFacultyId() {
+        return this.facultyId;
+    }
+
+    public String getPassword(){
+        return this.password;
+    }
+
+    public String getFacultyName(){
+        return this.facultyName;
+    }
+
+    public void setPassword(){
+        this.password="faculty@nitw";
+    }
+
+    // insert query for faculty details
+    public String insertQuery(){
+        this.setPassword();
+        return "insert into Faculty values ('"+
+                this.getFacultyId()+
+                "','"+ this.getPassword()+
+                "','"+ this.getFacultyName()+"');";
+    }
+}
