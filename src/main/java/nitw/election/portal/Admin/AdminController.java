@@ -36,36 +36,28 @@ public class AdminController {
     JdbcTemplate jdbcTemplate;
 
     // TO add a new year for elections into the database
-    @PostMapping(value = "/admin/add-year",
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PostMapping(value = "/admin/add-year")
     Years newYear(@RequestBody Years newYear) {
         Year.getInstance().addYear(newYear,jdbcTemplate);
         return newYear;
     }
 
     // creating a new faculty account
-    @PostMapping(value = "/admin/add-faculty",
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PostMapping(value = "/admin/add-faculty")
     Faculty newFaculty(@RequestBody Faculty newFaculty) {
         FacultyAccountActions.getInstance().addFaculty(newFaculty,jdbcTemplate);
         return newFaculty;
     }
 
     // adding a new section
-    @PostMapping(value = "/admin/add-section",
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PostMapping(value = "/admin/add-section")
     Section newSection(@RequestBody Section newSection) {
         SectionActions.getInstance().addSection(newSection,jdbcTemplate);
         return newSection;
     }
 
     // this method updates the faculty advisors
-    @PostMapping(value = "/admin/change-facad",
-            consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
-            produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
+    @PostMapping(value = "/admin/change-facad")
     JSONObject changeFacad(@RequestBody JSONObject updates) {
         SectionActions.getInstance().changeFacad(updates,jdbcTemplate);
         return updates;

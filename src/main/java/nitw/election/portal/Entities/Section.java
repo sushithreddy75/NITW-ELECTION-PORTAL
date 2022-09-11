@@ -8,8 +8,8 @@ import javax.persistence.Id;
  *
  * This class is the template of table Students in the database
  * The class variable stores the Student details
- * Inside the database significance of the class is the Student
- * for which elections are conducted in the portal
+ * Inside the database significance of the class is the Students who
+ * are involved in elections
  */
 
 @Entity

@@ -34,6 +34,7 @@ public class Year {
         jdbcTemplate.update(newYear.insertQuery());
     }
 
+    // this method returns max value of all the years entered which is current year
     public List<Map<String, Object>> sectionDetails(JdbcTemplate jdbcTemplate){
         String query="select max(year) from Section";
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(query);

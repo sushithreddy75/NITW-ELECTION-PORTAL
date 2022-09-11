@@ -9,7 +9,7 @@ import javax.persistence.Id;
  * This class is the template of table Faculty in the database
  * The class variable stores the Faculty details
  * Inside the database significance of the class is the Faculty
- * for which elections are conducted in the portal
+ * who are involved in the elections
  */
 @Entity
 public class Faculty {
@@ -30,6 +30,7 @@ public class Faculty {
         return this.facultyName;
     }
 
+    // initially set which can be changed by faculty later
     public void setPassword(){
         this.password="faculty@nitw";
     }
