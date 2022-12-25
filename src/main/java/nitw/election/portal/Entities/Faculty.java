@@ -43,4 +43,12 @@ public class Faculty {
                 "','"+ this.getPassword()+
                 "','"+ this.getFacultyName()+"');";
     }
+
+    public static String getFacultySetionsQuery(String FacultyId){
+        return "select SectionId from " +
+                "Section " +
+                "where Section.FacultyId='"+
+                FacultyId+
+                "';";
+    }
 }
